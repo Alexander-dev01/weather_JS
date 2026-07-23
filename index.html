@@ -5,35 +5,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>weather</title>
-  <link rel="stylesheet" href="/style/reset.css">
-  <link rel="stylesheet" href="/style/index.css">
+  <link rel="stylesheet" href="src/style/reset.css">
+  <link rel="stylesheet" href="src/style/variables.css">
+  <link rel="stylesheet" href="src/style/global.css">
+  <link rel="stylesheet" href="src/style/header.css">
+  <link rel="stylesheet" href="src/style/main.css">
+  <link rel="stylesheet" href="src/style/footer.css">
 </head>
 
 <body>
-  <header>
+  <header class="header">
     <div class="container">
       <div class="header-inner">
         <div class="logo">
-          <img src="" alt="">
+         <div class="logo__img"> <img src="/src/images/logo.png" title="картинка погоды" alt="logo"></div>
           <span class="logo__text">Погода</span>
         </div>
-        <div class="mestopolosenie">
-          <div class="icon icon-mestopolosenie"></div>
-          <span class="mestopolosenie__text">г. москва</p>
-        </div>
+        <button class="global__button location">
+          <span class="global__icon"><img src="src/images/mestopolozenie.png" class="icon" alt="местоположение"></span>
+          <span class="location__text">г. москва</span>
+        </button>
       </div>
     </div>
   </header>
 
-  <main>
+  <main class="main">
     <div class="container">
     </div>
   </main>
 
-  <footer>
+  <footer class="footer">
     <div class="container">
     </div>
   </footer>
+  <script src="src/style/index.js"></script>
 </body>
 
 </html>
