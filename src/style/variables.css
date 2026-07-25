@@ -1,16 +1,19 @@
 :root {
-  --linear-gradient: linear-gradient(rgb(248, 248, 255), rgb(198, 204, 255));
+  --linear-gradient: linear-gradient(rgb(248, 255, 252), rgb(198, 255, 205));
+  --linear-gradient-active: linear-gradient(rgb(198, 255, 205),rgb(248, 255, 252));
+  
   --border-radius: 10px;
   --border-radius-image: 50%;
-  --border-button: 2px solid #ac8ffc;
+  --border-button: 2px solid #008a2e;
 
   --background-color-container: #ffffff;
   --margin-section: 30px 0px;
 
   --padding-text-div: 10px;
+  --margin-text-div: 10px;
   --padding-button: 5px 5px;
 
   --transition-duration: 0.2s;
 
-  --color-bg1: rgb(222, 222, 255); 
+  --color-bg1: rgba(0, 172, 66, 0.219); 
 }

@@ -4,10 +4,20 @@
 
 .header-inner {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: var(--padding-text-div);
 
+}
+
+@media(max-width:560px){
+  .header-inner{
+    justify-content: space-around;
+  }
+  .logo{
+    margin-bottom: var(--margin-text-div);
+  }
 }
 
 .logo {
