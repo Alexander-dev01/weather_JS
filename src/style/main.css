@@ -68,7 +68,9 @@
 
   background-color: var(--color-bg1);
   border-radius: var(--border-radius);
+
   padding: calc(var(--padding-text-div)*2);
+  margin: var(--margin-text-div);
 }
 
 .description__t {
@@ -85,4 +87,19 @@
 .description__t {
   /* overflow-wrap: break-word; */
   /* word-break: break-word; */
+}
+
+.main__start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--padding-text-div);
+  background-color: var(--color-bg1);
+}
+
+.main__start-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
