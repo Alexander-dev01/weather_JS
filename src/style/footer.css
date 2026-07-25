@@ -1,0 +1,8 @@
+
+.footer-inner {
+  margin: var(--margin-section);
+}
+.footer-text {
+  padding: var(--padding-text-div);
+  text-align: center;
+}
