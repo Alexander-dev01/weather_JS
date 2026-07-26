@@ -39,11 +39,7 @@
 
 
 
-.description__data {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+.button-description {
   margin: var(--margin-text-div);
 }
 
@@ -53,9 +49,7 @@
   }
 }
 
-.description__data-text {}
 
-.description__data-img {}
 
 .description__inner {
   display: flex;
@@ -89,17 +83,11 @@
   /* word-break: break-word; */
 }
 
-.main__start {
+.main__start-button {
   display: flex;
   align-items: center;
   justify-content: center;
 
   padding: var(--padding-text-div);
   background-color: var(--color-bg1);
-}
-
-.main__start-button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

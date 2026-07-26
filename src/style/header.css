@@ -51,7 +51,3 @@
   align-items: center;
   justify-content: center;
 }
-
-.location__text {
-  padding: var(--padding-text-div);
-}

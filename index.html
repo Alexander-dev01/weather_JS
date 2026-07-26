@@ -21,9 +21,9 @@
           <div class="logo__img"> <img src="src/images/logo.png" alt="logo"></div>
           <span class="logo__text">Погода</span>
         </div>
-        <button class="global__button location">
-          <span class="global__icon"><img src="src/images/mestopolozenie.png" class="icon" alt="местоположение"></span>
-          <span class="location__text">г. москва</span>
+        <button class="button">
+          <span class="button__icon"><img src="src/images/mestopolozenie.png" class="icon" alt="местоположение"></span>
+          <span class="button__text">г. москва</span>
         </button>
       </div>
     </div>
@@ -32,28 +32,39 @@
   <main class="main">
     <div class="container">
       <div class="main-inner">
-        <div class="weather__img"><img src="src/images/weather/solnecno.png" alt="" class="weather__img-img"></div>
+
+        <div class="weather__img">
+          <img src="src/images/weather/solnecno.png" alt="" class="weather__img-img">
+        </div>
+
         <div class="weather__description">
-          <button class="global__button description__data ">
-            <span class="global__icon description__data-img"><img src="src/images/data.png" class="icon"
+          <button class="button button-description ">
+            <span class="button__icon"><img src="src/images/data.png" class="icon"
                 alt="data"></span>
-            <span class="description__data-text">23.03.2022 г.</span>
+            <span class="button__text">23.03.2022 г.</span>
           </button>
+
           <div class="description__inner">
             <div class="description__t">23 градуса</div>
             <div class="description__name">Дождь</div>
           </div>
         </div>
+        
       </div>
-      <div class="main__start">
-        <button class="global__button main__start-button">
-          <span class="global__icon">
+
+
+
+
+      <div class="main__start-button">
+        <button class="button">
+          <span class="button__icon">
             <img class="icon" src="src/images/start.png" alt="start"></span>
-          <span class="main__start-text">Узнать погоду!</span>
+          <span class="button__text">Узнать погоду!</span>
         </button>
       </div>
     </div>
   </main>
+
 
   <footer class="footer">
     <div class="container">

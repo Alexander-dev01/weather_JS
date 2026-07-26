@@ -1,7 +1,7 @@
 body {
   min-height: 100vh;
   background-image: linear-gradient(blue, rgb(0, 238, 255));
-  background-attachment:fixed;
+  background-attachment: fixed;
   font-size: 24px;
   color: #3f3f3f;
 
@@ -16,8 +16,10 @@ body {
 }
 
 
-.global__button {
+.button {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   min-width: 0;
   border: var(--border-button);
@@ -27,21 +29,22 @@ body {
   padding: var(--padding-button);
 }
 
-.global__button:hover {
+.button:hover {
   transform: scale(1.03);
 }
-.global__button:active {
+
+.button:active {
   transform: scale(1.03);
   background: var(--linear-gradient-active);
 }
 
-.global__button:hover .icon {
+.button:hover .icon {
   transform: scale(1.2);
 
 }
 
 
-.global__icon {
+.button__icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,4 +61,8 @@ body {
   object-fit: cover;
   border-radius: var(--border-radius-image);
   transition-duration: var(--transition-duration);
+}
+
+.button__text {
+  padding: var(--padding-text-div);
 }
