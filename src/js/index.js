@@ -59,6 +59,7 @@ class Weather {
     latitude: null, //47.2357
     longitude: null, //39.7015
     timezone: null, //Europe%2FMoscow
+    tomorrowDate: null // (22-22-2026)+1
   }
 
 
@@ -69,12 +70,21 @@ class Weather {
   }
 
   gluing() {
+    // дата пока не применяется но если будет расширение то она пригодится для поиска по дате в json и вычислением индекса этой даты который потом буду использовать для вынимания по индексу данных температуры и тд.
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const tomorrowDate = tomorrow.toISOString().slice(0, 10);
+    this.currentLatitudeLongitudeTimezone.tomorrowDate = tomorrowDate
+
+
     const allLocationArray = Object.entries(this.citiesCoordinates)
     allLocationArray.forEach(element => {
       if (element[0] === this.notClearWheatherCity.locationValue) {
-        this.currentLatitudeLongitudeTimezone = { ...element[1] }
-        console.log('this.currentLatitudeLongitudeTimezone', this.currentLatitudeLongitudeTimezone);
-
+        this.currentLatitudeLongitudeTimezone = {
+          ...this.currentLatitudeLongitudeTimezone,
+          ...element[1],
+        }
+        console.log('упакованный для отправки this.currentLatitudeLongitudeTimezone', this.currentLatitudeLongitudeTimezone);
       }
     });
   }
@@ -123,8 +133,13 @@ class Weather {
   // ===================================================================
   sending() {
     const urlStart = 'https://api.open-meteo.com/v1/forecast?'
-
-    const urlEnd = `latitude=${this.currentLatitudeLongitudeTimezone.latitude}&longitude=${this.currentLatitudeLongitudeTimezone.longitude}&current=temperature_2m,weather_code&timezone=${this.currentLatitudeLongitudeTimezone.timezone}`
+    let urlEnd = ''
+    if (this.notClearWheatherCity.dateValue == 'segodnya') {
+      urlEnd = `latitude=${this.currentLatitudeLongitudeTimezone.latitude}&longitude=${this.currentLatitudeLongitudeTimezone.longitude}&current=temperature_2m,weather_code&timezone=${this.currentLatitudeLongitudeTimezone.timezone}`
+    }
+    else {
+      urlEnd = `latitude=${this.currentLatitudeLongitudeTimezone.latitude}&longitude=${this.currentLatitudeLongitudeTimezone.longitude}&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=${this.currentLatitudeLongitudeTimezone.timezone}`
+    }
 
     fetch(`${urlStart}${urlEnd}`)
       .then((response) => {
@@ -134,11 +149,27 @@ class Weather {
         return response.json()
       })
       .then((json) => {
-        this.currentWeatherFetch = {
-          dataTemperature: json.current.temperature_2m,
-          dataTime: json.current.time,
-          dataWeatherCod: json.current.weather_code,
+        console.log('json', json);
+
+        if (this.notClearWheatherCity.dateValue == 'segodnya') {
+          const temperatureRound = Math.round(json.current.temperature_2m)
+          this.currentWeatherFetch = {
+            dataTemperature: temperatureRound,
+            dataTime: json.current.time,
+            dataWeatherCod: json.current.weather_code,
+          }
         }
+        else {
+          let srTemperature = (json.daily.temperature_2m_max[1] + json.daily.temperature_2m_min[1]) / 2
+          srTemperature = Math.round(srTemperature)
+          this.currentWeatherFetch = {
+            dataTemperature: srTemperature,
+            dataTime: json.daily.time[1],
+            dataWeatherCod: json.daily.weather_code[1],
+          }
+        }
+
+
         console.log('данные от сервера (уже в моем объекте)', this.currentWeatherFetch);
       })
       .catch((error) => {
