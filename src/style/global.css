@@ -16,21 +16,28 @@ body {
 }
 
 
-.button {
+.button, .select, .radio__text {
   display: flex;
   align-items: center;
   justify-content: center;
+
   flex-wrap: wrap;
   min-width: 0;
+
   border: var(--border-button);
   border-radius: var(--border-radius);
-  background: var(--linear-gradient);
+  background-image: var(--linear-gradient);
+
   transition-duration: var(--transition-duration);
   padding: var(--padding-button);
 }
 
 .button:hover {
   transform: scale(1.03);
+}
+
+.select:hover {
+  box-shadow: var(--shadow);
 }
 
 .button:active {
@@ -65,4 +72,28 @@ body {
 
 .button__text {
   padding: var(--padding-text-div);
+}
+
+.select {
+  background-image: url('../images/mestopolozenie.png') ;
+  background-color: var(--color-bg1);
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  background-position: 5px;
+  padding-left: 40px;
+}
+
+.radio {
+  display: none;
+}
+
+.radio__text {
+  margin: var(--margin-text-div);
+  justify-content: start;
+}
+
+.radio:checked+.radio__text {
+  box-shadow: var(--shadow);
+  transform: scale(1.03);
+
 }

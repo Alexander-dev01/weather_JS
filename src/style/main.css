@@ -38,11 +38,6 @@
 }
 
 
-
-.button-description {
-  margin: var(--margin-text-div);
-}
-
 @media(max-width:550px) {
   .weather__img {
     min-height: 100px;
@@ -51,7 +46,7 @@
 
 
 
-.description__inner {
+.description__content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,14 +68,6 @@
 
 .description__name {
   font-weight: 700;
-}
-
-/* перенос строк  */
-.description__inner,
-.description__name,
-.description__t {
-  /* overflow-wrap: break-word; */
-  /* word-break: break-word; */
 }
 
 .main__start-button {

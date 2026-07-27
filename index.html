@@ -21,10 +21,12 @@
           <div class="logo__img"> <img src="src/images/logo.png" alt="logo"></div>
           <span class="logo__text">Погода</span>
         </div>
-        <button class="button">
-          <span class="button__icon"><img src="src/images/mestopolozenie.png" class="icon" alt="местоположение"></span>
-          <span class="button__text">г. москва</span>
-        </button>
+        <select class="select" form="weather__form" name="location" data-js-location>
+          <option value="moscow">г. Москва</option>
+          <option value="rostovNaDonu">г. Ростов-на-Дону</option>
+          <option value="saintPetersburg">г. Санкт-Петербург</option>
+        </select>
+
       </div>
     </div>
   </header>
@@ -37,26 +39,35 @@
           <img src="src/images/weather/solnecno.png" alt="" class="weather__img-img">
         </div>
 
-        <div class="weather__description">
-          <button class="button button-description ">
-            <span class="button__icon"><img src="src/images/data.png" class="icon"
-                alt="data"></span>
-            <span class="button__text">23.03.2022 г.</span>
-          </button>
+        <form id="weather__form" class="weather__description">
+          <div class="description__date">
 
-          <div class="description__inner">
+            <input class="radio " type="radio" name="date" value="segodnya" id="segodnya" checked>
+            <label class="radio__text" for="segodnya">
+              <img class="icon" src="src/images/data.png" alt="date">
+              Сегодня
+            </label>
+
+            <input class="radio " type="radio" name="date" value="zawtra" id="zawtra">
+            <label class="radio__text" for="zawtra">
+              <img class="icon" src="src/images/data.png" alt="date">
+              Завтра
+            </label>
+          </div>
+
+          <div class="description__content">
             <div class="description__t">23 градуса</div>
             <div class="description__name">Дождь</div>
           </div>
-        </div>
-        
+        </form>
+
       </div>
 
 
 
 
       <div class="main__start-button">
-        <button class="button">
+        <button class="button" type="submit" form="weather__form" data-js-submit>
           <span class="button__icon">
             <img class="icon" src="src/images/start.png" alt="start"></span>
           <span class="button__text">Узнать погоду!</span>
@@ -69,7 +80,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-text">Это подвал)</div>
+        <div class="footer__text">Это подвал)</div>
       </div>
     </div>
   </footer>
