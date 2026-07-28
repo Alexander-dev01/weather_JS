@@ -150,7 +150,7 @@ class Weather {
     fetch(`${urlStart}${urlEnd}`)
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Ошибка короче - ищи сам')
+          throw new Error(`${response.status} - пинайте фронтендера`)
         }
         return response.json()
       })
@@ -180,6 +180,7 @@ class Weather {
         console.log('данные от сервера (уже в моем объекте)', this.currentWeatherFetch);
       })
       .catch((error) => {
+        this.elementTemperature.textContent=error
         console.log(error);
       })
   }
