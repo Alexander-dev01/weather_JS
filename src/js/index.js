@@ -43,10 +43,33 @@ class Weather {
     99: 'Сильная гроза с градом',
   }
 
+  weatherImages = {
+    0: 'src/images/weather/solnecno.png',
+    1: 'src/images/weather/solnecno.png',
+    2: 'src/images/weather/pasmurno.png',
+    3: 'src/images/weather/pasmurno.png',
+    45: 'src/images/weather/tuman.png',
+    48: 'src/images/weather/tuman.png',
+    51: 'src/images/weather/dojd.png',
+    53: 'src/images/weather/dojd.png',
+    55: 'src/images/weather/dojd.png',
+    61: 'src/images/weather/dojd.png',
+    63: 'src/images/weather/dojd.png',
+    65: 'src/images/weather/dojd.png',
+    71: 'src/images/weather/sneg.png',
+    73: 'src/images/weather/sneg.png',
+    75: 'src/images/weather/sneg.png',
+    95: 'src/images/weather/groza.png',
+    96: 'src/images/weather/groza.png',
+    99: 'src/images/weather/groza.png',
+  }
+
   selectors = {
-    location: '[data-js-location]',
-    date: '[data-js-date]',
     form: '#weather__form',
+
+    outputImage: '[data-js-image]',
+    outputTemperature: '[data-js-temperature]',
+    outputWeather: '[data-js-weather]',
   }
 
   notClearWheatherCity = {
@@ -92,28 +115,13 @@ class Weather {
 
 
   prikleyka() {
-    this.elementDate = document.querySelector(this.selectors.date)
-    this.elementLocation = document.querySelector(this.selectors.location)
     this.elementForm = document.querySelector(this.selectors.form)
 
-
+    this.elementImage = document.querySelector(this.selectors.outputImage)
+    this.elementTemperature = document.querySelector(this.selectors.outputTemperature)
+    this.elementWeather = document.querySelector(this.selectors.outputWeather)
   }
 
-  clickLocation(event) {
-    const isLocation = event.target.closest(this.selectors.location)
-    if (!isLocation) {
-      return
-    }
-
-  }
-
-  clickDate(event) {
-    const isDate = event.target.closest(this.selectors.date)
-    if (!isDate) {
-      return
-    }
-    console.log('ура ты нажал по дате');
-  }
 
   clickSubmit(event) {
     this.sborDannix()
@@ -121,7 +129,6 @@ class Weather {
     this.sending()
   }
 
-  // ===================================================================
   sborDannix() {
     const dateValue = this.elementForm.elements.date.value
     const locationValue = this.elementForm.elements.location.value
@@ -130,7 +137,6 @@ class Weather {
   }
 
 
-  // ===================================================================
   sending() {
     const urlStart = 'https://api.open-meteo.com/v1/forecast?'
     let urlEnd = ''
@@ -168,6 +174,7 @@ class Weather {
             dataWeatherCod: json.daily.weather_code[1],
           }
         }
+        this.render()
 
 
         console.log('данные от сервера (уже в моем объекте)', this.currentWeatherFetch);
@@ -177,11 +184,21 @@ class Weather {
       })
   }
 
+  render() {
+    const { dataWeatherCod, dataTemperature, dataTime } = this.currentWeatherFetch
+    this.elementTemperature.textContent = dataTemperature + '°'
+    this.elementWeather.textContent = this.weatherCodes[dataWeatherCod] ?? 'погода не найдена'
+    this.elementImage.src = this.weatherImages[dataWeatherCod]
+
+
+    this.elementImage.classList.toggle('beauty')
+    setTimeout(() => {
+      this.elementImage.classList.toggle('beauty')
+    }, 500);
+
+  }
+
   bindEvent() {
-    document.addEventListener('click', (event) => {
-      this.clickDate(event)
-      this.clickLocation(event)
-    })
     this.elementForm.addEventListener('submit', (event) => {
       event.preventDefault()
       this.clickSubmit(event)

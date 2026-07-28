@@ -11,7 +11,7 @@
 
 }
 
-@media(max-width:560px){
+@media(max-width:700px){
   .header-inner{
     justify-content: space-around;
   }

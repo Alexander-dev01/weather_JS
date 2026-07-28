@@ -8,6 +8,10 @@ body {
   font-family: 'Lato-Regular', sans-serif;
 }
 
+.beauty {
+  transform: rotate(180deg);
+}
+
 .container {
   max-width: 70vw;
   margin: 0px auto;
@@ -70,12 +74,8 @@ body {
   transition-duration: var(--transition-duration);
 }
 
-.button__text {
-  padding: var(--padding-text-div);
-}
-
 .select {
-  background-image: url('../images/mestopolozenie.png') ;
+  background-image: url('../images/mestopolozenie.png');
   background-color: var(--color-bg1);
   background-repeat: no-repeat;
   background-size: 30px 30px;

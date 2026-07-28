@@ -36,7 +36,7 @@
       <div class="main-inner">
 
         <div class="weather__img">
-          <img src="src/images/weather/solnecno.png" alt="" class="weather__img-img">
+          <img data-js-image src="src/images/weather/empty.gif" alt="" class="weather__img-img">
         </div>
 
         <form id="weather__form" class="weather__description">
@@ -56,8 +56,10 @@
           </div>
 
           <div class="description__content">
-            <div class="description__t">23 градуса</div>
-            <div class="description__name">Дождь</div>
+            <div class="description__t">
+              <span data-js-temperature>Жми "узнать погоду!"</span>
+            </div>
+            <div class="description__name" data-js-weather></div>
           </div>
         </form>
 
@@ -70,7 +72,7 @@
         <button class="button" type="submit" form="weather__form" data-js-submit>
           <span class="button__icon">
             <img class="icon" src="src/images/start.png" alt="start"></span>
-          <span class="button__text">Узнать погоду!</span>
+          <span>Узнать погоду!</span>
         </button>
       </div>
     </div>
