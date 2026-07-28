@@ -186,9 +186,9 @@ class Weather {
 
   render() {
     const { dataWeatherCod, dataTemperature, dataTime } = this.currentWeatherFetch
-    this.elementTemperature.textContent = dataTemperature + '°'
+    this.elementTemperature.textContent = dataTemperature + '°' ?? '° не найден'
     this.elementWeather.textContent = this.weatherCodes[dataWeatherCod] ?? 'погода не найдена'
-    this.elementImage.src = this.weatherImages[dataWeatherCod]
+    this.elementImage.src = this.weatherImages[dataWeatherCod] ?? 'src/images/weather/empty.png'
 
 
     this.elementImage.classList.toggle('beauty')
