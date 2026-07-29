@@ -26,7 +26,6 @@
 
 .weather__description {
   flex-direction: column;
-  justify-content: space-around;
 }
 
 
@@ -35,7 +34,7 @@
   object-fit: cover;
   width: 300px;
   transition: var(--transition-duration);
-
+  padding: var(--padding-text-div);
 }
 
 
@@ -51,7 +50,7 @@
   background-color: var(--color-bg1);
   border-radius: var(--border-radius);
 
-  padding: calc(var(--padding-text-div)*2);
+  padding: var(--padding-text-div);
   margin: var(--margin-text-div);
 }
 
