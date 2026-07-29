@@ -5,7 +5,7 @@ class DarkTheme {
     this.loadThemeLocalStorage()
   }
 
-  onTheme = false
+  onTheme = true
 
   selectors = {
     theme: '[data-js-theme]',
@@ -33,7 +33,7 @@ class DarkTheme {
   }
 
   loadThemeLocalStorage() {
-    this.onTheme = JSON.parse(localStorage.getItem('themeWeather')) ?? false
+    this.onTheme = JSON.parse(localStorage.getItem('themeWeather')) ?? true
     console.log('темная тема?', this.onTheme);
     this.changeTheme()
   }
