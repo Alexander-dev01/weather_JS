@@ -211,7 +211,7 @@ class Weather {
     this.elementImage.classList.toggle('beauty')
     setTimeout(() => {
       this.elementImage.classList.toggle('beauty')
-    }, 500);
+    }, 200);
 
   }
 
