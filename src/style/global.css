@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-  max-width: 70vw;
+  max-width: 80vw;
   margin: 0px auto;
   background-color: var(--background-color-container);
   border-radius: var(--border-radius);
