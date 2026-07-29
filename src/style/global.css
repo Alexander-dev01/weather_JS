@@ -8,6 +8,8 @@ body {
   font-family: 'Lato-Regular', sans-serif;
 }
 
+
+
 .beauty {
   transform: scale(1.2);
 }
@@ -88,12 +90,20 @@ body {
 }
 
 .radio__text {
+  display: flex;
   margin: var(--margin-text-div);
-  justify-content: start;
+  justify-content:space-around;
 }
 
 .radio:checked+.radio__text {
   box-shadow: var(--shadow);
   transform: scale(1.03);
+
+}
+
+@media(max-width:1200px) {
+  body {
+    font-size: 18px;
+  }
 
 }
