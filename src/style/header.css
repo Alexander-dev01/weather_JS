@@ -11,13 +11,12 @@
 
 }
 
-@media(max-width:700px){
-  .header-inner{
-    justify-content: space-around;
-  }
-  .logo{
-    margin-bottom: var(--margin-text-div);
-  }
+
+.header_right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: var(--margin-text-div);
 }
 
 .logo {
@@ -50,4 +49,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media(max-width:700px) {
+  .header-inner {
+    justify-content: space-around;
+  }
+
+  .logo {
+    margin-bottom: var(--margin-text-div);
+  }
 }

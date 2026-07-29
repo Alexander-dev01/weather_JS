@@ -1,0 +1,46 @@
+body.dark {
+  color: var(--color-text-dark);
+  background-image: linear-gradient(rgb(0, 27, 59), rgb(0, 45, 48));
+}
+
+body.dark .light {
+  background-color: var(--color-bg1-dark);
+}
+
+body.dark .container {
+  background-color: var(--background-color-container-dark);
+}
+
+body.dark .button,
+body.dark .select,
+body.dark .radio__text {
+  background-image: var(--linear-gradient-dark);
+  color: var(--color-text-dark);
+  border: var(--border-button-dark);
+}
+
+body.dark .select:hover {
+  box-shadow: var(--shadow-dark);
+}
+
+body.dark .button:active {
+  background: var(--linear-gradient-active-dark);
+}
+
+body.dark .icon {
+  box-shadow: inset var(--shadow-dark);
+  border: 2px solid var(--shadow-dark);
+}
+
+body.dark .select {
+  background-color: var(--color-bg2-dark);
+  background-image: none;
+}
+
+body.dark .select option {
+  background-color: var(--color-bg2-dark);
+}
+
+body.dark .radio:checked+.radio__text {
+  box-shadow: var(--shadow-dark);
+}

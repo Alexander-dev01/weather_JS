@@ -3,16 +3,19 @@ body {
   background-image: linear-gradient(blue, rgb(0, 238, 255));
   background-attachment: fixed;
   font-size: 24px;
-  color: #3f3f3f;
+  color: var(--color-text);
 
   font-family: 'Lato-Regular', sans-serif;
 }
 
-
+.light {
+  background-color: var(--color-bg1);
+}
 
 .beauty {
   transform: scale(0.8);
 }
+
 
 .container {
   max-width: 80vw;
@@ -21,8 +24,9 @@ body {
   border-radius: var(--border-radius);
 }
 
-
-.button, .select, .radio__text {
+.button,
+.select,
+.radio__text {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,6 +34,7 @@ body {
   flex-wrap: wrap;
   min-width: 0;
 
+  color: var(--color-text);
   border: var(--border-button);
   border-radius: var(--border-radius);
   background-image: var(--linear-gradient);
@@ -78,11 +83,15 @@ body {
 
 .select {
   background-image: url('../images/mestopolozenie.png');
-  background-color: var(--color-bg1);
+  background-color: var(--color-bg2);
   background-repeat: no-repeat;
   background-size: 30px 30px;
   background-position: 5px;
   padding-left: 40px;
+}
+
+select option {
+  background-color: var(--color-bg2);
 }
 
 .radio {
@@ -92,7 +101,7 @@ body {
 .radio__text {
   display: flex;
   margin: var(--margin-text-div);
-  justify-content:space-around;
+  justify-content: space-around;
 }
 
 .radio:checked+.radio__text {

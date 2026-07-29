@@ -4,6 +4,7 @@ class Weather {
     this.bindEvent()
   }
 
+
   citiesCoordinates = {
     moscow: {
       latitude: 55.7558,
@@ -136,6 +137,7 @@ class Weather {
     this.elementImage = document.querySelector(this.selectors.outputImage)
     this.elementTemperature = document.querySelector(this.selectors.outputTemperature)
     this.elementWeather = document.querySelector(this.selectors.outputWeather)
+
   }
 
 
@@ -196,7 +198,7 @@ class Weather {
         console.log('данные от сервера (уже в моем объекте)', this.currentWeatherFetch);
       })
       .catch((error) => {
-        this.elementTemperature.textContent=error
+        this.elementTemperature.textContent = error
         console.log(error);
       })
   }

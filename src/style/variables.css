@@ -1,10 +1,13 @@
 :root {
   --linear-gradient: linear-gradient(rgb(248, 255, 252), rgb(198, 255, 205));
+  --linear-gradient-dark: linear-gradient(rgb(12, 0, 185), rgb(19, 4, 139));
   --linear-gradient-active: linear-gradient(rgb(198, 255, 205), rgb(248, 255, 252));
+  --linear-gradient-active-dark: linear-gradient(rgb(19, 4, 139), rgb(12, 0, 185));
 
   --border-radius: 10px;
   --border-radius-image: 50%;
   --border-button: 2px solid #008a2e;
+  --border-button-dark: 2px solid #1c0080;
 
 
   --margin-section: 30px 0px;
@@ -14,9 +17,16 @@
 
   --transition-duration: 0.2s;
 
+  --color-text: #3f3f3f;
+  --color-text-dark: #d5d2ff;
   --color-bg1: rgba(0, 172, 66, 0.219);
+  --color-bg1-dark: rgba(16, 0, 245, 0.199);
+  --color-bg2: rgb(199,237, 213);
+  --color-bg2-dark: rgb(25, 0, 90);
   --background-color-container: #ffffff;
+  --background-color-container-dark: #1c0033;
 
-  --shadow: 1px 1px 10px 0px rgb(0, 112, 47);
+  --shadow: 1px 1px 20px 0px rgb(0, 112, 47);
+  --shadow-dark: 1px 1px 20px 0px rgb(122, 112, 255);
 
 }

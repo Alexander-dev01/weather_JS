@@ -8,7 +8,8 @@
   padding: var(--padding-text-div);
 }
 
-.weather__img, .weather__description {
+.weather__img,
+.weather__description {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +18,6 @@
   min-height: 400px;
   overflow: hidden;
 
-  background-color: var(--color-bg1);
   margin: var(--margin-text-div);
   border-radius: var(--border-radius);
 }
@@ -47,7 +47,6 @@
   font-size: 50px;
   line-height: 60px;
 
-  background-color: var(--color-bg1);
   border-radius: var(--border-radius);
 
   padding: var(--padding-text-div);
@@ -69,7 +68,6 @@
   justify-content: center;
 
   padding: var(--padding-text-div);
-  background-color: var(--color-bg1);
 }
 
 @media(max-width:1200px) {
