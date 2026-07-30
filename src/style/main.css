@@ -31,7 +31,9 @@
   flex-direction: column;
 }
 
-
+.weather__description .icon {
+  margin-right: 10px;
+}
 
 .weather__img-img {
   object-fit: cover;
