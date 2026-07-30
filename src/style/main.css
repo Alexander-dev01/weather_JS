@@ -31,7 +31,7 @@
   flex-direction: column;
 }
 
-.weather__description .icon {
+.main .icon {
   margin-right: 10px;
 }
 
