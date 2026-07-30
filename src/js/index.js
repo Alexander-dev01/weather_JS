@@ -91,7 +91,6 @@ class Weather {
 
   notClearWheatherCity = {
     locationValue: '', //записан после сбора данных (moscow)
-    weather: '',
     dateValue: '', //записан после сбора данных (segodnya)
   }
 
