@@ -1,10 +1,13 @@
+.main {
+  margin: var(--margin-section);
+}
+
 .main-inner {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
 
-  margin: var(--margin-section);
   padding: var(--padding-text-div);
 }
 

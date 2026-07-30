@@ -1,4 +1,6 @@
-
+.footer {
+  margin: var(--margin-section);
+}
 .footer-inner {
   margin: var(--margin-section);
 }
