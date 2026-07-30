@@ -110,7 +110,6 @@ class Weather {
   }
 
   gluing() {
-    // дата пока не применяется но если будет расширение то она пригодится для поиска по дате в json и вычислением индекса этой даты который потом буду использовать для вынимания по индексу данных температуры и тд.
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     const tomorrowDate = tomorrow.toISOString().slice(0, 10);
@@ -168,7 +167,9 @@ class Weather {
     fetch(`${urlStart}${urlEnd}`)
       .then((response) => {
         if (!response.ok) {
-          throw new Error(`${response.status} - пинайте фронтендера`)
+          throw new Error(response.status === 400
+            ? `ошибка ${response.status} - пинайте фронтендера`
+            : `ошибка ${response.status}`)
         }
         return response.json()
       })
@@ -184,12 +185,13 @@ class Weather {
           }
         }
         else {
-          let srTemperature = (json.daily.temperature_2m_max[1] + json.daily.temperature_2m_min[1]) / 2
+          const index = json.daily.time.findIndex((element) => element === this.currentLatitudeLongitudeTimezone.tomorrowDate)
+          let srTemperature = (json.daily.temperature_2m_max[index] + json.daily.temperature_2m_min[index]) / 2
           srTemperature = Math.round(srTemperature)
           this.currentWeatherFetch = {
             dataTemperature: srTemperature,
-            dataTime: json.daily.time[1],
-            dataWeatherCod: json.daily.weather_code[1],
+            dataTime: json.daily.time[index],
+            dataWeatherCod: json.daily.weather_code[index],
           }
         }
         this.render()
@@ -198,7 +200,7 @@ class Weather {
         console.log('данные от сервера (уже в моем объекте)', this.currentWeatherFetch);
       })
       .catch((error) => {
-        this.elementTemperature.textContent = error
+        this.elementTemperature.textContent = error.message
         console.log(error);
       })
   }
