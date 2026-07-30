@@ -37,7 +37,7 @@
 
 .weather__img-img {
   object-fit: cover;
-  width: 200px;
+  height: 200px;
   transition: var(--transition-duration);
   padding: var(--padding-text-div);
 }
