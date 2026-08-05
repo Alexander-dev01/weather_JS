@@ -3,6 +3,7 @@
 }
 .footer-inner {
   margin: var(--margin-section);
+  padding: var(--padding-text-div);
 }
 .footer__text {
   padding: var(--padding-text-div);
