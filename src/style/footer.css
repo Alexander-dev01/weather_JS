@@ -2,10 +2,14 @@
   margin: var(--margin-section);
 }
 .footer-inner {
+  display: flex;
+  justify-content: space-between;
   margin: var(--margin-section);
   padding: var(--padding-text-div);
 }
 .footer__text {
+  display: flex;
+  align-items: center;
   padding: var(--padding-text-div);
   text-align: center;
 }

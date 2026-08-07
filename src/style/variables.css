@@ -19,6 +19,8 @@
 
   --color-text: #3f3f3f;
   --color-text-dark: #d5d2ff;
+  --color-link: #4f729c;
+  --color-link-hover: #9b5a5a;
   --color-bg1: rgba(0, 172, 66, 0.219);
   --color-bg1-dark: rgba(16, 0, 245, 0.199);
   --color-bg2: rgb(199,237, 213);

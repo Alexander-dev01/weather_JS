@@ -12,6 +12,21 @@ body {
   background-color: var(--color-bg1);
 }
 
+.link{
+  text-decoration: none;
+color: var(--color-link);
+border-bottom: 1px solid;
+border-bottom-color: var(--color-link);
+transition: all 0.3s;
+
+}
+
+.link:hover {
+  color: var(--color-link-hover);
+  border-bottom-color: var(--color-link-hover);
+  transform: scale(1.03);
+}
+
 .beauty {
   transform: scale(0.8);
 }
